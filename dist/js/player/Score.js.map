@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/player/Score.js"],"names":["Score"],"mappings":";;;;;;;;AAAA;IACaA,K,WAAAA,K","file":"Score.js","sourcesContent":["//计分器类\r\nexport class Score {\r\n    \r\n}"]}

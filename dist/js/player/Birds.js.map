@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/player/Birds.js"],"names":["Birds"],"mappings":";;;;;;;;AAAA;IACaA,K,WAAAA,K","file":"Birds.js","sourcesContent":["//小鸟类\r\nexport class Birds {\r\n    \r\n}"]}

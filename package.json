@@ -1,0 +1,14 @@
+{
+  "name": "FlappyBird",
+  "version": "0.0.1",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

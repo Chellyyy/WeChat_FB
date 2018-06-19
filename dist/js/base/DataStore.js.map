@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/base/DataStore.js"],"names":["DataStore"],"mappings":";;;;;;;;AAAA;IACaA,S,WAAAA,S","file":"DataStore.js","sourcesContent":["//变量缓存器，方便我们在不同的类中访问和修改变量\r\nexport class DataStore {\r\n    \r\n}"]}

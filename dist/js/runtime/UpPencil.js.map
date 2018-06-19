@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/runtime/UpPencil.js"],"names":["UpPencil"],"mappings":";;;;;;;;AAAA;IACaA,Q,WAAAA,Q","file":"UpPencil.js","sourcesContent":["//上半部分铅笔\r\nexport class UpPencil {\r\n    \r\n}"]}

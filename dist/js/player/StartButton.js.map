@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/player/StartButton.js"],"names":["StartButton"],"mappings":";;;;;;;;AAAA;IACaA,W,WAAAA,W","file":"StartButton.js","sourcesContent":["//开始按钮类\r\nexport class StartButton {\r\n    \r\n}"]}

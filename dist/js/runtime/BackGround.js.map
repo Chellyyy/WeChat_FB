@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../js/runtime/BackGround.js"],"names":["BackGround"],"mappings":";;;;;;;;AAAA;IACaA,U,WAAAA,U","file":"BackGround.js","sourcesContent":["//背景\r\nexport class BackGround {\r\n    \r\n}"]}
