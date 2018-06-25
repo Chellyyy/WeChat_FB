@@ -11,6 +11,10 @@ var _ResourceLoader = require("./js/base/ResourceLoader.js");
 
 var _Director = require("./js/Director.js");
 
+var _BackGround = require("./js/runtime/BackGround.js");
+
+var _DataStore = require("./js/base/DataStore.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Main = exports.Main = function () {
@@ -21,23 +25,25 @@ var Main = exports.Main = function () {
 
         this.canvas = document.getElementById('game_canvas');
         this.ctx = this.canvas.getContext('2d');
+        this.dataStore = _DataStore.DataStore.getInstance();
         var loader = _ResourceLoader.ResourceLoader.create();
         loader.onLoaded(function (map) {
             return _this.onResourceFirstLoaded(map);
         });
-
-        var image = new Image();
-        image.src = '../res/background.png';
-
-        image.onload = function () {
-            _this.ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, image.width, image.height);
-        };
     }
 
     _createClass(Main, [{
         key: "onResourceFirstLoaded",
         value: function onResourceFirstLoaded(map) {
-            console.log(map);
+            this.dataStore.ctx = this.ctx;
+            this.dataStore.res = map;
+            this.init();
+        }
+    }, {
+        key: "init",
+        value: function init() {
+            this.dataStore.put('background', _BackGround.BackGround);
+            _Director.Director.getInstance().run();
         }
     }]);
 
