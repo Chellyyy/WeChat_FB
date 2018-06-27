@@ -19,7 +19,7 @@ export class Sprite {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.heigth = height;
+        this.height = height;
     }
     static getImage(key){
         return DataStore.getInstance().res.get(key);
@@ -43,7 +43,7 @@ export class Sprite {
          x = this.x,
          y = this.y,
          width = this.width,
-         height = this.heigth){
+         height = this.height){
         this.ctx.drawImage(
             img,
             srcX,

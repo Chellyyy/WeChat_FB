@@ -36,7 +36,7 @@ var Sprite = exports.Sprite = function () {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.heigth = height;
+        this.height = height;
     }
 
     _createClass(Sprite, [{
@@ -62,7 +62,7 @@ var Sprite = exports.Sprite = function () {
             var x = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : this.x;
             var y = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : this.y;
             var width = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : this.width;
-            var height = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : this.heigth;
+            var height = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : this.height;
 
             this.ctx.drawImage(img, srcX, srcY, srcW, srcH, x, y, width, height);
         }

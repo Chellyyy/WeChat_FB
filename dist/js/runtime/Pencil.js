@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Land = undefined;
+exports.Pencil = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -17,37 +17,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //不断移动的陆地
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Pencil = exports.Pencil = function (_Sprite) {
+    _inherits(Pencil, _Sprite);
 
-var Land = exports.Land = function (_Sprite) {
-    _inherits(Land, _Sprite);
+    function Pencil(image, top) {
+        _classCallCheck(this, Pencil);
 
-    function Land() {
-        _classCallCheck(this, Land);
+        var _this = _possibleConstructorReturn(this, (Pencil.__proto__ || Object.getPrototypeOf(Pencil)).call(this, image, 0, 0, image.width, image.height,
+        //刚好在右侧看不到的位置
+        window.innerWidth, 0, image.width, image.height));
 
-        var image = _Sprite2.Sprite.getImage('land');
-
-        //地板的水平变化坐标
-        var _this = _possibleConstructorReturn(this, (Land.__proto__ || Object.getPrototypeOf(Land)).call(this, image, 0, 0, image.width, image.height, 0, window.innerHeight - image.height, image.width, image.height));
-
-        _this.landX = 0;
-        //地板的移动速度
-        _this.landSpeed = _Director.Director.getInstance().moveSpeed;
+        _this.top = top;
         return _this;
     }
 
-    _createClass(Land, [{
+    _createClass(Pencil, [{
         key: "draw",
         value: function draw() {
-            this.landX = this.landX + this.landSpeed;
-            if (this.landX > this.img.width - window.innerWidth) {
-                this.landX = 0;
-            }
-            _get(Land.prototype.__proto__ || Object.getPrototypeOf(Land.prototype), "draw", this).call(this, this.img, this.srcX, this.srcY, this.srcW, this.srcH, -this.landX, this.y, this.width, this.height);
+            this.x = this.x - _Director.Director.getInstance().moveSpeed;
+            _get(Pencil.prototype.__proto__ || Object.getPrototypeOf(Pencil.prototype), "draw", this).call(this, this.img, 0, 0, this.img.width, this.img.height, this.x, this.y, this.img.width, this.img.height);
         }
     }]);
 
-    return Land;
+    return Pencil;
 }(_Sprite2.Sprite);
-//# sourceMappingURL=Land.js.map
+//# sourceMappingURL=Pencil.js.map
