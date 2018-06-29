@@ -7,6 +7,7 @@ import {Land} from "./js/runtime/Land.js";
 import {DataStore} from "./js/base/DataStore.js";
 import {Birds} from "./js/player/Birds.js";
 import {StartButton} from "./js/player/StartButton.js";
+import {Score} from "./js/player/Score.js";
 
 export class Main {
     constructor() {
@@ -21,6 +22,7 @@ export class Main {
     }
 
     onResourceFirstLoaded(map) {
+        this.dataStore.canvas = this.canvas;
         this.dataStore.ctx = this.ctx;
         this.dataStore.res = map;
         this.init();
@@ -36,7 +38,8 @@ export class Main {
             .put('background', BackGround)
             .put('land', Land)
             .put('birds',Birds)
-            .put('startButton',StartButton);
+            .put('startButton',StartButton)
+            .put('score',Score);
         this.registerEvent();
         //要在游戏逻辑运行之前
         this.director.createPencil();

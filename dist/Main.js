@@ -21,6 +21,8 @@ var _Birds = require("./js/player/Birds.js");
 
 var _StartButton = require("./js/player/StartButton.js");
 
+var _Score = require("./js/player/Score.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Main = exports.Main = function () {
@@ -42,6 +44,7 @@ var Main = exports.Main = function () {
     _createClass(Main, [{
         key: "onResourceFirstLoaded",
         value: function onResourceFirstLoaded(map) {
+            this.dataStore.canvas = this.canvas;
             this.dataStore.ctx = this.ctx;
             this.dataStore.res = map;
             this.init();
@@ -51,7 +54,7 @@ var Main = exports.Main = function () {
         value: function init() {
             //首先重置游戏是没有结束的
             this.director.isGameOver = false;
-            this.dataStore.put('pencils', []).put('background', _BackGround.BackGround).put('land', _Land.Land).put('birds', _Birds.Birds).put('startButton', _StartButton.StartButton);
+            this.dataStore.put('pencils', []).put('background', _BackGround.BackGround).put('land', _Land.Land).put('birds', _Birds.Birds).put('startButton', _StartButton.StartButton).put('score', _Score.Score);
             this.registerEvent();
             //要在游戏逻辑运行之前
             this.director.createPencil();
